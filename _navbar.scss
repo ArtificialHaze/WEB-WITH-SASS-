@@ -1,0 +1,87 @@
+// IMPORTS
+
+@import 'colors';
+@import 'mediaQrs';
+
+
+// VARIABLE
+
+%align-center{
+    display: flex;
+    align-items: center;
+}
+
+// MAIN
+
+.navbar{
+ position: relative;
+ background: $light;
+ height: 80px;
+ display: flex;
+ justify-content: space-between;
+ padding: 8px calc((100vw - 1200px)/2);
+ z-index: 10;
+
+ &__logo{
+    color: $dark;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 32px;
+    margin-left: 24px;
+    @extend %align-center
+ }
+
+ &__bars{
+    opacity: 0;
+    @include tabs{
+        color: $dark;
+        opacity: 1;
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        font-size: 32px;
+        cursor: pointer;
+    };
+ }
+
+ &__menu{
+    @extend %align-center;
+    list-style: none;
+    text-align: center;
+    margin-right: 24px;
+    @include tabs{
+        display: none;
+    }
+
+    &--links{
+        color: $dark;
+        @extend %align-center;
+        justify-content: center;
+        text-decoration: none;
+        padding: 0px 16px;
+        font-weight: bold;
+
+        &:hover{
+            color: $green;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    #btn{
+        padding: 12px 24px;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        background: $green;
+        margin-left: 16px;
+        color: $light;
+
+        &:hover{
+            background: $orange;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+ }
+
+
+}
